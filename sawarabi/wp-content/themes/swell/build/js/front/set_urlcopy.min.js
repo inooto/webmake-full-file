@@ -1,0 +1,1 @@
+!function(){function o(){window.ClipboardJS&&new ClipboardJS(".c-urlcopy").on("success",(function(o){const n=o.trigger;n.classList.add("-done"),setTimeout((()=>{n.classList.remove("-done")}),3e3)}))}o(),window.SWELLHOOK&&window.SWELLHOOK.barbaAfter.add(o)}();

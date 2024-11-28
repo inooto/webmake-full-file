@@ -1,0 +1,125 @@
+@import "../../../scss/foundation/mixin/media";
+
+// レイヤー要素
+%absLayer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 0;
+	// display: block;
+	width: 100%;
+	height: 100%;
+	content: "";
+}
+
+.swell-block-fullWide + .swell-block-fullWide {
+	margin-top: -2em;
+}
+
+.swell-block-fullWide {
+	position: relative;
+	// z-index: 1;
+	padding: 2em 0;
+
+	&.has-bg-img {
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+
+		&::before {
+
+			@extend %absLayer;
+			z-index: 1;
+			background-color: inherit;
+		}
+	}
+
+	&.-fixbg {
+
+		@include pc {
+			background-attachment: fixed;
+		}
+	}
+
+	&.-parallax {
+		overflow: hidden;
+	}
+
+	.__parallaxLayer {
+
+		@extend %absLayer;
+		top: -20vh;
+		height: calc(100% + 25vh);
+		background-position: center;
+		background-size: cover;
+		// z-index: 0;
+	}
+
+	.w-beforeToc {
+		display: none;
+	}
+}
+
+.swell-block-fullWide__inner {
+	position: relative;
+	z-index: 1;
+	padding: 0 var(--swl-fw_inner_pad, 0);
+
+	&.l-article,
+	&.l-container {
+
+		// サイドバーありのページで記事下ウィジェットなどで呼び出されてもセンター表示できるように。
+		margin-right: auto;
+		margin-left: auto;
+
+		// l-container の paddingに合わせる。
+		@include sp {
+			--swl-fw_inner_pad: var(--swl-pad_container, 4vw);
+		}
+	}
+}
+
+.swell-block-fullWide__SVG {
+	position: absolute;
+	left: 0;
+	z-index: 2;
+	width: 100%;
+	// height: 100px;
+	pointer-events: none;
+
+	&.-top {
+		bottom: 100%;
+		transform: translateY(1px); // 線が出ることがあるのを防止
+	}
+
+	&.-bottom {
+		top: 100%;
+		transform: translateY(-1px); // 線が出ることがあるのを防止
+	}
+
+	&.-bg {
+		// background-repeat: repeat-x;
+		background-repeat: no-repeat;
+		background-size: 100% 100%;
+
+		// pxが小数点になると境目にスペースが入ってしまう
+		// @include sp {
+		//     background-size: calc(100% - 10px) 100%;
+		// }
+
+		// @include pc {
+		//     background-size: calc(100% - 20px) 100%;
+		// }
+
+		&.-top {
+			// background-position: 100% 100%;
+			background-position: center;
+		}
+
+		&.-bottom {
+			// background-position: -100% 0%;
+			background-position: center;
+		}
+	}
+}
+

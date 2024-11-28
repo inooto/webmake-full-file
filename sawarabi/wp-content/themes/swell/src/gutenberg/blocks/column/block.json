@@ -1,0 +1,52 @@
+{
+	"apiVersion": 2,
+	"name": "loos/column",
+	"title": "カラム項目",
+	"category": "swell-blocks",
+	"parent": [
+		"loos/columns"
+	],
+	"supports": {
+		"className": false,
+		"reusable": false
+	},
+	"usesContext": [
+		"swell/columns/isScrollable"
+	],
+	"attributes": {
+		"vAlign": {
+			"type": "string",
+			"default": ""
+		},
+		"widthPC": {
+			"type": "number"
+		},
+		"widthTab": {
+			"type": "number"
+		},
+		"widthMobile": {
+			"type": "number"
+		},
+		"colWidth": {
+			"type": "object"
+		},
+		"isBreakAll": {
+			"type": "boolean",
+			"default": false
+		},
+		"useCustomPadding": {
+			"type": "boolean",
+			"default": false
+		},
+		"padding": {
+			"type": "object",
+			"default": {
+				"top": "1rem",
+				"left": "1rem",
+				"right": "1rem",
+				"bottom": "1rem"
+			}
+		}
+	},
+	"textdomain": "swell"
+}

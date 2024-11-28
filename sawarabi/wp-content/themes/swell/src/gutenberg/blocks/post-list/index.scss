@@ -1,0 +1,56 @@
+@import "../../../scss/foundation/mixin/media";
+
+[data-type="loos/post-list"],
+[data-type="loos/rss"] {
+	// 5.8からカラム数がバグる
+	&::before,
+	&::after {
+		box-sizing: border-box;
+	}
+}
+
+// 投稿リストブロック, RSSブロックに適用させたいので.wp-block
+.wp-block {
+
+	.p-postListWrap {
+		pointer-events: none;
+	}
+
+	// 投稿リスト
+	.p-postList {
+		box-sizing: border-box !important; // 5.8で revert される
+		padding-left: 0;
+		list-style: none !important;
+	}
+
+	.p-postList__item {
+		box-sizing: border-box;
+	}
+
+	.c-postThumb__figure {
+		margin: 0;
+	}
+
+	.c-postThumb__img {
+		height: 100%;
+	}
+
+	.-type-list .c-postThumb__cat,
+	.-type-list2 .c-postThumb__cat {
+		right: auto;
+		left: 0;
+	}
+
+	.p-postList__link {
+		text-decoration: none;
+	}
+
+
+	@include pc {
+
+		.-type-card.-pc-col3 .p-postList__item {
+			width: calc(100% / 3);
+		}
+	}
+}
+
