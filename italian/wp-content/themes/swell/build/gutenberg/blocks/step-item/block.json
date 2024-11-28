@@ -1,0 +1,63 @@
+{
+  "apiVersion": 2,
+  "name": "loos/step-item",
+  "title": "ステップ項目",
+  "category": "swell-blocks",
+  "parent": [
+    "loos/step"
+  ],
+  "supports": {
+    "anchor": true,
+    "className": false
+  },
+  "usesContext": [
+    "swell/step/titleTag"
+  ],
+  "attributes": {
+    "title": {
+      "source": "html",
+      "selector": ".swell-block-step__title"
+    },
+    "stepLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "theLabel": {
+      "type": "string",
+      "default": ""
+    },
+    "theNum": {
+      "type": "string",
+      "default": ""
+    },
+    "numColor": {
+      "type": "string",
+      "default": ""
+    },
+    "stepClass": {
+      "type": "string",
+      "default": "default"
+    },
+    "isHideLabel": {
+      "type": "boolean",
+      "default": false
+    },
+    "isHideNum": {
+      "type": "boolean",
+      "default": false
+    },
+    "isShapeFill": {
+      "type": "boolean",
+      "default": false
+    },
+    "isPreview": {
+      "type": "boolean",
+      "default": "false"
+    },
+    "titleTag": {
+      "type": "string",
+      "default": "div"
+    }
+  },
+  "textdomain": "swell"
+}

@@ -1,0 +1,29 @@
+{
+	"apiVersion": 2,
+	"name": "loos/faq-item",
+	"title": "項目",
+	"category": "swell-blocks",
+	"parent": [
+		"loos/faq"
+	],
+	"supports": {
+		"anchor": true,
+		"className": false,
+		"reusable": false
+	},
+	"usesContext": [
+		"swell/faq/titleTag"
+	],
+	"attributes": {
+		"contentQ": {
+			"type": "string",
+			"source": "html",
+			"selector": ".faq_q",
+			"default": ""
+		},
+		"titleTag": {
+			"type": "string",
+			"default": "dt"
+		}
+	}
+}

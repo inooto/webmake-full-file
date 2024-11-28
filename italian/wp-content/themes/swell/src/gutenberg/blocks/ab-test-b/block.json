@@ -1,0 +1,15 @@
+{
+	"apiVersion": 2,
+	"name": "loos/ab-test-b",
+	"title": "Bブロック",
+	"category": "swell-blocks",
+	"parent": [
+		"loos/ab-test"
+	],
+	"supports": {
+		"className": false,
+		"customClassName": false,
+		"__experimentalToolbar": false
+	},
+	"textdomain": "swell"
+}
