@@ -1,0 +1,131 @@
+@import "../../../scss/foundation/mixin/media";
+
+//リッチカラム
+.swell-block-columns {
+	--swl-clmn-mrgn--x: 1.5rem;
+	--swl-clmn-mrgn--y: 1.5rem;
+	--swl-clmn-pddng: 0;
+
+	> .c-scrollHint {
+		margin-top: 0;
+	}
+
+
+	&[data-scrollable] {
+		--swl-clmn-mrgn--y: 0px; // calcに使われるので単位必要
+		overflow: hidden;
+
+		// スクロールバー分
+		> .swell-block-columns__inner {
+			padding-bottom: 16px;
+		}
+	}
+
+
+	&.alignfull {
+		margin-right: 0;
+		margin-left: 0;
+	}
+
+	&[data-valign="top"] > .swell-block-columns__inner {
+		align-items: flex-start;
+	}
+
+	&[data-valign="center"] > .swell-block-columns__inner {
+		align-items: center;
+	}
+
+	&[data-valign="bottom"] > .swell-block-columns__inner {
+		align-items: flex-end;
+	}
+
+}
+
+//リッチカラム
+.swell-block-columns__inner {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	margin-top: 0 !important;
+	margin-left: calc(-1 * var(--swl-clmn-mrgn--x));
+	row-gap: var(--swl-clmn-mrgn--y); // 縦方向の余白
+	// column-gap: var(--swl-clmn-mrgn--x); // 横方向の余白
+}
+
+.swell-block-column {
+
+	--clmn-w: var(--clmn-w--mobile, 100%);
+
+	@include tab {
+		--clmn-w: var(--clmn-w--tab, 50%);
+	}
+
+	@include pc {
+		--clmn-w: var(--clmn-w--pc, 50%);
+	}
+
+	// 詳細度強めておく
+	.swell-block-columns & {
+		width: calc(var(--clmn-w) - var(--swl-clmn-mrgn--x));
+		margin: 0 0 0 var(--swl-clmn-mrgn--x);
+		padding: var(--swl-clmn-pddng);
+	}
+
+	&[data-valign="top"] {
+		align-self: flex-start;
+	}
+
+	&[data-valign="center"] {
+		align-self: center;
+	}
+
+	&[data-valign="bottom"] {
+		align-self: flex-end;
+	}
+
+	&.is-breadk-all {
+		word-break: break-all;
+	}
+}
+
+
+// シャドウスタイル
+.is-style-clmn-shadow {
+	--swl-clmn-pddng: 1rem;
+
+	&[data-scrollable="1"] > .swell-block-columns__inner {
+		padding: 4px 4px 20px;
+	}
+
+	> .swell-block-columns__inner > .swell-block-column {
+		color: #333;
+		background-color: #fff;
+		box-shadow: var(--swl-box_shadow);
+	}
+}
+
+.is-style-clmn-border {
+	--swl-clmn-pddng: 1rem;
+
+	> .swell-block-columns__inner > .swell-block-column {
+		border: solid 1px var(--color_border);
+	}
+}
+
+.swell-block-columns[data-scrollable="1"] {
+
+	> .swell-block-columns__inner {
+		flex-wrap: nowrap;
+		margin-left: 0;
+		overflow-x: auto;
+	}
+
+	> .swell-block-columns__inner > .swell-block-column {
+		flex-shrink: 0;
+		width: var(--clmn-w);
+
+		&:first-child {
+			margin-left: 0;
+		}
+	}
+}

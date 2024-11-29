@@ -1,0 +1,245 @@
+@import "../../../scss/foundation/mixin/media";
+
+.c-bannerLink::before,
+.c-bannerLink__text {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+// バナーリンクブロック・カスタムバナーショートコード・ピックアップバナーから利用される。
+.c-bannerLink {
+	position: relative;
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+	overflow: hidden;
+	text-align: center;
+	text-decoration: none;
+	border-radius: var(--swl-radius--4, 0px);
+
+	i {
+		margin-right: .5em;
+	}
+
+	&.-shadow-on {
+		box-shadow: var(--swl-img_shadow);
+	}
+
+	&.-radius-on {
+		border-radius: 8px;
+	}
+
+	&::before {
+		z-index: 1;
+		background-color: inherit;
+		content: "";
+	}
+}
+
+.c-bannerLink::before,
+.c-bannerLink::after,
+.c-bannerLink__figure,
+.c-bannerLink__label {
+	border-radius: inherit;
+}
+
+a.c-bannerLink:hover {
+
+	.c-bannerLink__figure {
+		opacity: .8;
+	}
+
+	.c-bannerLink__img {
+		transform: scale(1.04);
+	}
+}
+
+.c-bannerLink__figure {
+	position: relative;
+	z-index: 0;
+	margin: 0;
+	overflow: hidden;
+	// backface-visibility: hidden;
+	transition: opacity .25s;
+}
+
+.c-bannerLink__img {
+	display: block;
+	width: 100%;
+	// backface-visibility: hidden;
+	transition: transform .25s;
+
+	.swell-block-bannerLink & {
+		height: 100%;
+		object-fit: cover;
+	}
+
+	.c-bannerLink.-blur-on & {
+		transform: scale(1.08);
+		filter: blur(4px);
+	}
+
+	a.c-bannerLink.-blur-on:hover & {
+		transform: scale(1.12);
+	}
+}
+
+.c-bannerLink__label {
+	position: absolute;
+	z-index: 2;
+	display: block;
+	font-size: 3.4vw;
+	line-height: 1.4;
+
+	@include tab {
+		font-size: 14px;
+	}
+}
+
+.c-bannerLink__text {
+	z-index: 2;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 1.5em;
+	color: #fff;
+
+	&.is-vertically-aligned-top {
+		justify-content: flex-start;
+	}
+
+	&.is-vertically-aligned-bottom {
+		justify-content: flex-end;
+	}
+}
+
+.c-bannerLink__title {
+	width: 100%;
+	font-size: 1.4em;
+	line-height: 1.25;
+
+	&::before {
+		// カスタムバナーでのicon設定
+		margin-right: .25em;
+	}
+}
+
+.c-bannerLink__description {
+	width: 100%;
+	margin-top: .5em;
+	font-size: .95em;
+}
+
+//ボーダー内側つけるかどうか
+.-border-inside {
+
+	.c-bannerLink::after {
+		position: absolute;
+		top: 4px;
+		left: 4px;
+		z-index: 3;
+		display: block;
+		width: calc(100% - 8px);
+		height: calc(100% - 8px);
+		border: solid 1px #fff;
+		content: "";
+		pointer-events: none;
+	}
+}
+
+.-darken {
+
+	.c-bannerLink {
+		background-color: rgba(0, 0, 0, .2);
+	}
+}
+
+//キャプションスタイル
+.-cap-none {
+
+	.c-bannerLink__label {
+		display: none;
+	}
+}
+
+.-cap-top_left {
+
+	.c-bannerLink__label {
+		top: 4px;
+		left: 4px;
+		padding: 2px 12px;
+		color: #333;
+		background-color: #fff;
+	}
+}
+
+.-cap-btm_right {
+
+	.c-bannerLink__label {
+		right: 4px;
+		bottom: 4px;
+		padding: 2px 12px;
+		color: #333;
+		background-color: #fff;
+	}
+}
+
+.-cap-ctr_simple {
+
+	.c-bannerLink__label {
+		top: 50%;
+		left: 0;
+		width: 100%;
+		padding: 0 1em;
+		color: #fff;
+		font-weight: bold;
+		text-align: center;
+		text-shadow: 1px 1px rgba(0, 0, 0, .2);
+		transform: translateY(-50%);
+	}
+}
+
+.-cap-ctr_button {
+
+	.c-bannerLink__label {
+		top: 50%;
+		left: 12%;
+		width: 76%;
+		padding: 8px 12px;
+		color: #333;
+		background: rgba(#fff, .9);
+		border: solid 1px var(--swl-color_shadow);
+		border-radius: 40px;
+		transform: translateY(-50%);
+	}
+}
+
+.-cap-btm_wide {
+
+	.c-bannerLink__label {
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		padding: 8px;
+		color: #fff;
+		text-shadow: 1px 1px rgba(0, 0, 0, .25);
+		background: rgba(0, 0, 0, .25);
+	}
+}
+
+
+// カスタムバナー　(ショートコード)だけのCSS
+.p-customBanner {
+
+	.c-bannerLink::before {
+		background: rgba(0, 0, 0, .2);
+	}
+
+	.c-bannerLink__text {
+		text-shadow: 1px 1px 0 var(--swl-color_shadow);
+	}
+}

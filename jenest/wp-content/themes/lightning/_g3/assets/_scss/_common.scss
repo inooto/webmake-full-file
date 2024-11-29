@@ -1,0 +1,220 @@
+/*-------------------------------------------*/
+/*	reset user agent style
+/*-------------------------------------------*/
+figure{
+	// コアが 1em 追加してくるのでリセットしないようにコメントアウト
+	// margin-inline-start: 0;
+	// margin-inline-end: 0;
+	// margin-block-end: 0;
+}
+/*-------------------------------------------*/
+/*	common style
+/*-------------------------------------------*/
+.wp-block-table, // If direct specific to table that can not delete margin
+p,
+ul,
+ol,
+dl,
+blockquote,
+iframe {
+	margin-bottom:var(--vk-margin-element-bottom);
+}
+
+a {
+	text-decoration: none;
+	color:var(--vk-color-text-link);
+	&:hover {
+		color: var(--vk-color-text-link-hover);
+		text-decoration-color:var(--vk-color-text-link-hover);
+	}
+	p &,
+	li &{
+		text-decoration: underline;
+		text-decoration-style: dotted;
+		text-underline-offset:2px;
+		text-decoration-color:rgba(0,0,0,0.3);
+		text-decoration-thickness: 1px;
+		&:hover {
+			text-decoration: none;
+		}
+	}
+}
+
+p {
+	line-height: var(--vk-line-height);
+	margin-block-start:0;
+}
+
+ul,
+ol,
+dl,
+table,
+p {
+	& + h1,
+	& + h2,
+	& + h3,
+	& + h4,
+	& + h5,
+	& + h6{
+		margin-top:2em;
+	}
+}
+// theme.json 有効の場合、この指定はコアが出力する body .is-layout-flow > * + * { margin-block-start: 24px; } に負ける。
+// * 負けないように _common-theme-json.scss で強く追加指定すると、theme.json 未使用のユーザーが個別のCSSカスタマイズで margin-top を指定してある場合に、打ち消してしまうかもしれない。
+// * theme.json が有効の場合 = 新規サイトの前提なので、ユーザーが個別に margin 指定すれば良いためこの指定は負ける仕様で良い。
+figure {
+	& + h1,
+	& + h2,
+	& + h3 {
+		margin-top:2em;
+	}
+	& + h4,
+	& + h5,
+	& + h6 {
+		margin-top:var(--vk-margin-headding-bottom);
+	}
+}
+
+h1,h2,h3,h4,h5,h6 {
+	margin-top:0;
+	margin-bottom:var(--vk-margin-headding-bottom);
+	line-height: var(--vk-line-height-low);
+	a {
+		text-decoration: none;
+	}
+}
+h1 {
+	font-size:2rem;
+}
+h2 {
+	font-size:1.75rem;
+}
+h3 {
+	font-size:1.5rem;
+}
+h4 {
+	font-size:1.33rem;
+}
+h5 {
+	font-size:1.2rem;
+}
+h6 {
+	font-size:1.125rem;
+}
+
+ul,
+ol{
+	padding-left:1.5em;
+}
+li {
+	margin-top:0.5em;
+	margin-bottom:0.5em;
+}
+
+blockquote {
+	margin:0;
+	padding:1em 1.5em;
+	border-left:1px solid var(--vk-color-primary);
+	background-color: var(--vk-color-accent-bg);
+}
+
+img {
+	height:auto;
+	max-width: 100%;
+}
+
+i {
+	margin-right: 0.4em;
+}
+
+hr {
+	border:1px solid var(--vk-color-border-hr);
+}
+
+/* Reset iOS Style */
+input[type="submit"],
+input[type="button"] {
+	-webkit-box-sizing: border-box;
+	-webkit-appearance: button;
+	appearance: button;
+	&::-webkit-search-decoration {
+		display: none;
+	}
+	&::focus {
+		outline-offset: -2px;
+	}
+}
+input:where(:not([type=checkbox],[type=radio])),
+select {
+	-webkit-appearance: none;
+	appearance: none;
+}
+/* / Reset iOS Style */
+
+input[type=text],
+input[type=number],
+input[type=email],
+input[type=tel],
+input[type=url],
+input[type=date],
+input[type=password],
+select,
+textarea {
+	font-size: 1rem;
+	border:1px solid var(--vk-color-border-form);
+	border-radius: var(--vk-size-radius);
+	padding:0.8em 1em;
+	// bottomはすぐ下にキャプションつけたりする場合があるので若干余白をもたせた方が良いが、
+	// 上部に余白をつけるとWooCommerceなどすぐとなりにボタンがある場合など段差ができるので上部に余白はつけない
+	margin:0 0 0.5rem;
+	width:100%;
+	color: var(--vk-color-text-body); // iOS で文字色が hover 色にされるため上書き
+	background-color: #fff;
+}
+input[type=file] {
+	margin:0.5rem 0;
+}
+input[type=submit]{
+	font-size: 1rem;
+	border:1px solid var(--vk-color-primary-dark);
+	background-color:var(--vk-color-primary);
+	color:#fff;
+	padding: 0.5em 2em;
+	border-radius: var(--vk-size-radius);
+	&:hover {
+		color:#fff;
+		cursor: pointer;
+		background-color:var(--vk-color-primary-dark);
+	}
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 100%;
+	th,td {
+		padding:0.5rem 1rem;
+	}
+}
+// Custom HTML and Classic Editor
+*:where(:not(.wp-block-table) ) > table {
+	border:1px solid var(--vk-color-border-hr);
+	:is(th,td) {
+		border:1px solid;
+		font-size:var(--vk-size-text-sm);
+	}
+	:is(thead,tbody,tfoot,th,td) {
+		border-color:inherit;
+	}
+}
+
+iframe {
+	border: none;
+}
+
+dt {
+	font-weight: bold;
+	margin-bottom:0.5em;
+}
+dd {
+	margin-left:0;
+}

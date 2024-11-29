@@ -1,0 +1,92 @@
+{
+	"apiVersion": 2,
+	"name": "loos/button",
+	"title": "SWELLボタン",
+	"category": "swell-blocks",
+	"keywords": [
+		"swell",
+		"button"
+	],
+	"supports": {
+		"anchor": true,
+		"className": false
+	},
+	"example": {
+		"attributes": {
+			"content": "Button",
+			"hrefUrl": "###"
+		}
+	},
+	"attributes": {
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": ".swell-block-button__link > span"
+		},
+		"hrefUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"isNewTab": {
+			"type": "boolean",
+			"default": false
+		},
+		"rel": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a",
+			"attribute": "rel"
+		},
+		"imgUrl": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "img",
+			"attribute": "src"
+		},
+		"btnAlign": {
+			"type": "string",
+			"default": ""
+		},
+		"htmlTags": {
+			"type": "string",
+			"source": "html",
+			"selector": ".swell-block-button.-html",
+			"default": ""
+		},
+		"isCount": {
+			"type": "boolean",
+			"default": false
+		},
+		"btnId": {
+			"type": "string",
+			"source": "attribute",
+			"selector": ".swell-block-button",
+			"attribute": "data-id"
+		},
+		"iconName": {
+			"type": "string",
+			"default": ""
+		},
+		"iconPosition": {
+			"type": "string",
+			"default": "left"
+		},
+		"color": {
+			"type": "string"
+		},
+		"fontSize": {
+			"type": "string"
+		},
+		"iconSize": {
+			"type": "string"
+		},
+		"width": {
+			"type": "string"
+		},
+		"btnSize": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "swell"
+}

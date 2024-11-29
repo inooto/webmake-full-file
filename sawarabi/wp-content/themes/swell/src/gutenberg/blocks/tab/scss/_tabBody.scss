@@ -1,0 +1,130 @@
+/*
+.swell-block-tab[.is-style-HOGE]
+
+    ul.c-tabList -> 投稿リストにはこっちに [.is-style-HOGE]
+        .c-tabList__item
+        .c-tabList__item
+    div.c-tabBody
+        .c-tabBody__item
+        .c-tabBody__item
+*/
+@keyframes tabFadeUp {
+
+    0% {
+        display: none;
+        transform: translateY(8px);
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        transform: translateY(8px);
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes tabFade {
+
+    0% {
+        display: none;
+        opacity: 0;
+    }
+
+    1% {
+        display: block;
+        opacity: 0;
+    }
+
+    100% {
+        display: block;
+        opacity: 1;
+    }
+}
+
+.c-tabBody {
+    position: relative;
+
+    .is-style-default & {
+        margin-top: -1px;
+        padding: 1.5em;
+        border: solid 1px var(--color_text);
+
+        @include tab {
+            padding: 2em;
+        }
+    }
+}
+
+.c-tabBody__item {
+
+    // 投稿リストのタブ
+    .p-postListTabBody & {
+        position: relative;
+        z-index: 0;
+        width: 100%;
+        transform: translateY(0);
+
+        &[aria-hidden="true"] {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 0px;
+            overflow: hidden;
+            transform: translateY(8px);
+            visibility: hidden;
+            opacity: 0;
+        }
+
+        &[aria-hidden="false"] {
+            z-index: 1;
+            transition: opacity .5s, visibility .5s, transform .5s;
+            transition-timing-function: ease-out;
+        }
+
+
+        //通常タブ
+        .is-style-default &[aria-hidden="true"] {
+            transform: translateY(0);
+        }
+    }
+
+    // ブロックでのタブ
+    .swell-block-tab & {
+        position: relative;
+        width: 100%;
+
+        &[aria-hidden="true"] {
+            display: none;
+        }
+
+        // &[aria-hidden="false"] {
+        //     animation: tabFadeUp .5s ease 0s 1 normal both;
+        // }
+
+        // //通常タブ
+        // .is-style-default &[aria-hidden="false"] {
+        //     animation: tabFade .5s ease 0s 1 normal both;
+        // }
+    }
+}
+
+
+// アーカイブ用
+.c-tabBody__pager {
+    // position: relative;
+    padding-left: 24px;
+}
+
+.c-tabBody__moreText {
+    position: absolute;
+    //top: 0;
+    right: 48px;
+    color: #aaa;
+    box-shadow: none !important;
+}

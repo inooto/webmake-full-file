@@ -1,0 +1,90 @@
+@import "../../../scss/foundation/mixin/media";
+
+// .swell-block-dl {}
+
+.swell-block-dl__dt {
+	font-weight: bold;
+}
+
+.swell-block-dl__dd {
+	margin-left: 1em;
+	padding: 1em;
+}
+
+.swell-block-dl__dd + .swell-block-dl__dt {
+	margin-top: 1em;
+}
+
+.is-style-border {
+
+	> .swell-block-dl__dt {
+		padding-left: .75em;
+		border-left: solid 1px var(--color_main);
+	}
+}
+
+.is-style-vtabel {
+
+	> .swell-block-dl__dt {
+		margin-top: -1px !important;
+		padding: .5em 1em;
+		color: #fff;
+		background-color: var(--color_main);
+	}
+
+	> .swell-block-dl__dd {
+		margin-left: 0;
+		border: solid 1px var(--color_border);
+		border-top: none;
+	}
+}
+
+.is-style-float {
+
+	--swl-dt-width: 24%;
+
+	@include sp {
+		--swl-dt-width: 36%;
+	}
+
+	&.swell-block-dl {
+		display: flex;
+		flex-wrap: wrap;
+		line-height: 1.5;
+
+		@include sp {
+			font-size: .95em;
+		}
+	}
+
+	> .swell-block-dl__dt {
+		position: relative;
+		width: var(--swl-dt-width);
+		margin-top: 0 !important;
+		padding: .25em 2.5em .25em 0;
+
+
+		&::after {
+			position: absolute;
+			top: calc(1em - 1px);
+			right: 1em;
+			bottom: auto; // for editor
+			left: auto; // for editor
+			display: block;
+			width: .5em;
+			height: 2px;
+			background: var(--color_border);
+			content: "";
+		}
+	}
+
+	> .swell-block-dl__dd {
+		width: calc(100% - var(--swl-dt-width));
+		margin-left: 0;
+		padding: .25em 0;
+	}
+
+	> .swell-block-dl__dd + .swell-block-dl__dd {
+		margin-left: var(--swl-dt-width);
+	}
+}

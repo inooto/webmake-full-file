@@ -1,0 +1,13 @@
+{
+  "scripts": {
+    "build": "ncu -u && rm -rf node_modules && npm install && gulp copy_fa",
+    "phpunit": "composer install && npx wp-env run phpunit \"phpunit -c /var/www/html/wp-content/themes/lightning/vendor/font-awesome-versions/.phpunit.xml --verbose\""
+  },
+  "devDependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.2",
+    "@wordpress/env": "^5.16.0",
+    "gulp": "^4.0.2",
+    "gulp-replace": "^1.1.4",
+    "npm-check-updates": "^16.10.18"
+  }
+}

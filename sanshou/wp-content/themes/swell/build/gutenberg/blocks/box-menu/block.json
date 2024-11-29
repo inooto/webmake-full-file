@@ -1,0 +1,56 @@
+{
+  "apiVersion": 2,
+  "name": "loos/box-menu",
+  "title": "ボックスメニュー",
+  "category": "swell-blocks",
+  "keywords": [
+    "swell",
+    "box-menu"
+  ],
+  "supports": {
+    "anchor": true,
+    "className": false
+  },
+  "providesContext": {
+    "swell/box-menu/boxStyle": "boxStyle",
+    "swell/box-menu/boxGradient": "boxGradient"
+  },
+  "attributes": {
+    "boxStyle": {
+      "type": "string",
+      "default": "default"
+    },
+    "textColor": {
+      "type": "string"
+    },
+    "boxColor": {
+      "type": "string"
+    },
+    "boxGradient": {
+      "type": "string"
+    },
+    "direction": {
+      "type": "string",
+      "default": "vertical"
+    },
+    "colPC": {
+      "type": "string",
+      "default": "2"
+    },
+    "colTab": {
+      "type": "string",
+      "default": "2"
+    },
+    "colMobile": {
+      "type": "string",
+      "default": "2"
+    },
+    "gap": {
+      "type": "string"
+    },
+    "iconSize": {
+      "type": "string"
+    }
+  },
+  "textdomain": "swell"
+}

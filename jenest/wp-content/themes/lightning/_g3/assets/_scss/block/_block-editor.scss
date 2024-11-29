@@ -1,0 +1,87 @@
+// editor only
+.edit-post-visual-editor .editor-styles-wrapper {
+	.wp-block-table {
+		thead {
+			th.has-text-align-right {
+				text-align: center;
+			}
+		}
+	}
+}
+
+// 6.1 コアのボタンにデフォルトでテーマの色が当たらない対応打ち消し
+.editor-styles-wrapper .wp-block-buttons {
+	:where(.wp-block-button:not(.is-style-outline)) .wp-block-button__link {
+		background-color: var(--vk-color-primary);
+		border-radius: var(--vk-size-radius);
+	}
+}
+
+.wp-block-search .wp-block-search__button{
+    background-color: var(--vk-color-primary);
+	text-align: center;
+	display: block;
+	border-radius: var(--vk-size-radius);
+}
+
+// 編集画面で画像の左に発生する余白を削除（何のための余白か不明）
+.editor-styles-wrapper .is-root-container .block-editor-block-list__block > figure.wp-block-image.wp-block {
+    margin-left:0;
+}
+
+.is-root-container > .wp-block,
+.is-root-container > :where(div:not(.wp-block)) > .wp-block {
+	margin-left:auto;
+	margin-right:auto;
+}
+
+// theme.json を追加すると gap:24px をつけられるので打ち消し
+// .block-editor-block-list__layout がないと負けるので追加してある
+.editor-styles-wrapper .block-editor-block-list__layout .is-layout-flex:where(:not(.wp-block-columns)) {
+	gap:0.5em;
+}
+
+// theme.json 有効化した場合に画像の回り込み対応
+.editor-styles-wrapper {
+	.wp-block[data-align="right"] {
+		figure.wp-block-image {
+			float:right;
+		}
+	}
+	.wp-block[data-align="left"] {
+		figure.wp-block-image {
+			float:left;
+		}
+	}
+}
+
+// theme.json 有効にすると .editor-styles-wrapper .is-layout-flow > * + * { margin-block-start: 24px; } つけられるので打ち消し
+.editor-styles-wrapper .is-layout-flow > * + *:is([class*="wp-block"],[class*="vk_"]) {
+	margin-block-start: 0;
+}
+/*
+ theme.json 有効にすると 
+ .editor-styles-wrapper .is-layout-flow > * { margin-block-end:0; } 
+ つけられるので .common に記載と同じ指定で打ち消し
+ */
+.editor-styles-wrapper .is-layout-flow > *{
+	&:is(
+		.wp-block-table,
+		p,
+		ul,
+		ol,
+		dl,
+		blockquote,
+		iframe
+		) {
+		margin-block-end:var(--vk-margin-element-bottom);
+	}
+	&:is( h1,h2,h3,h4,h5,h6 ) {
+		margin-bottom:var(--vk-margin-headding-bottom);
+	}
+}
+
+// WP6.3からwp-block-cover にoverflow: clip; がついて、中に幅広・全幅ブロックを設置しても見切れてしまうようになったため追加
+.wp-block-cover:has( * > :is( div [ data-align = wide ]), div [ data-align = full ]){
+	overflow: visible;
+}

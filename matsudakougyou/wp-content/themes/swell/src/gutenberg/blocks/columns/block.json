@@ -1,0 +1,81 @@
+{
+	"apiVersion": 2,
+	"name": "loos/columns",
+	"title": "リッチカラム",
+	"category": "swell-blocks",
+	"keywords": [
+		"swell",
+		"columns",
+		"rich"
+	],
+	"supports": {
+		"anchor": true,
+		"className": false,
+		"align": [
+			"wide",
+			"full"
+		]
+	},
+	"example": {
+		"innerBlocks": [
+			{
+				"name": "loos/column",
+				"innerBlocks": [
+					{
+						"name": "core/paragraph",
+						"attributes": {
+							"content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+						}
+					}
+				]
+			},
+			{
+				"name": "loos/column",
+				"innerBlocks": [
+					{
+						"name": "core/paragraph",
+						"attributes": {
+							"content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+						}
+					}
+				]
+			}
+		]
+	},
+	"providesContext": {
+		"swell/columns/isScrollable": "isScrollable"
+	},
+	"attributes": {
+		"vAlign": {
+			"type": "string",
+			"default": ""
+		},
+		"colPC": {
+			"type": "string",
+			"default": "2"
+		},
+		"colTab": {
+			"type": "string",
+			"default": "2"
+		},
+		"colMobile": {
+			"type": "string",
+			"default": "1"
+		},
+		"isScrollable": {
+			"type": "boolean",
+			"default": false
+		},
+		"colWidth": {
+			"type": "object"
+		},
+		"margin": {
+			"type": "object",
+			"default": {
+				"x": "1.5rem",
+				"y": "1.5rem"
+			}
+		}
+	},
+	"textdomain": "swell"
+}

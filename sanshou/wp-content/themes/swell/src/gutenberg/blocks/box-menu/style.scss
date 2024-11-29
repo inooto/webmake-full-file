@@ -1,0 +1,233 @@
+@import "../../../scss/foundation/mixin/media";
+
+/*
+.swell-block-box-menu .is-style-{boxStyle& [data-has-gap="1|0"] [data-direction="vertical|horizontal"]
+  .swell-block-box-menu__inner
+    .swell-block-box-menu__item[data-has-gradient="1|0"][data-icon-type="svg|img"]
+      .swell-block-box-menu__link
+        .swell-block-box-menu__figure[data-html-wrapper]
+          [span|svg|img]
+        .swell-block-box-menu__text
+*/
+
+// ボックスメニュー
+.swell-block-box-menu {
+	--the-box-width--mb: 50%;
+	--the-box-width--tab: 50%;
+	--the-box-width--pc: 50%;
+	--the-gap: 0px;
+	--the-icon-size: 3em;
+	--the-icon-color: var(--color_main);
+
+
+	&[data-has-gap="1"] {
+
+		.swell-block-box-menu__inner {
+			row-gap: var(--the-gap);
+			// width: calc(100% + var(--the-gap));
+			margin-left: calc(-1 * var(--the-gap));
+		}
+
+		.swell-block-box-menu__item {
+			margin-left: var(--the-gap);
+		}
+	}
+
+	&[data-has-gap="0"] {
+
+		.swell-block-box-menu__inner {
+			margin-left: 1px;
+		}
+
+		.swell-block-box-menu__item {
+			margin-top: -1px !important;
+			margin-left: -1px !important;
+		}
+	}
+}
+
+.swell-block-box-menu__inner {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	// --the-hover-color: var(--the-icon-color);
+}
+
+// リンクボックス
+.swell-block-box-menu__item {
+	color: var(--the-text-color, inherit);
+	transition: opacity .25s, box-shadow .25s;
+
+	--the-box-width: var(--the-box-width--mb);
+
+	@include tab {
+		--the-box-width: var(--the-box-width--tab);
+	}
+
+	@include pc {
+		--the-box-width: var(--the-box-width--pc);
+	}
+
+
+	// 詳細度強めておく
+	.swell-block-box-menu & {
+		width: calc(var(--the-box-width) - var(--the-gap));
+		margin: 0;
+	}
+
+	.swell-block-box-menu[data-direction="vertical"] & {
+		text-align: center;
+	}
+}
+
+.swell-block-box-menu__link {
+	position: relative;
+	display: flex;
+	height: 100%;
+	padding: 1em;
+	color: inherit;
+	text-decoration: none;
+	transition: background-color .25s;
+
+	&:focus {
+		z-index: 1;
+	}
+
+	// 縦並び
+	.swell-block-box-menu[data-direction="vertical"] & {
+		flex-flow: column;
+		justify-content: center;
+	}
+
+	// 横並び
+	.swell-block-box-menu[data-direction="horizontal"] & {
+		align-items: center;
+	}
+}
+
+
+.swell-block-box-menu__figure {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+
+	// 縦並び
+	.swell-block-box-menu[data-direction="vertical"] & {
+		margin-bottom: 1em;
+	}
+
+	// 横並び
+	.swell-block-box-menu[data-direction="horizontal"] & {
+		margin-right: 1em;
+	}
+
+	svg {
+		display: block;
+		width: var(--the-icon-size);
+		height: var(--the-icon-size);
+	}
+
+	i {
+		color: var(--the-icon-color);
+		font-size: var(--the-icon-size);
+		line-height: 1;
+	}
+
+	> img {
+		width: var(--the-icon-size);
+		height: var(--the-icon-size);
+		object-fit: cover;
+	}
+
+	&[data-trim="0"] > img {
+		width: 100%;
+		object-fit: contain;
+	}
+}
+
+.swell-block-box-menu__text {
+	display: block;
+	flex: 1;
+	line-height: 1;
+}
+
+
+/**
+ スタイル：標準
+　*/
+.swell-block-box-menu.is-style-default {
+	--the-border-color: #eee;
+
+	.swell-block-box-menu__item {
+		border: solid 1px var(--the-border-color);
+	}
+
+	[data-has-gradient="0"] .swell-block-box-menu__figure svg {
+		color: var(--the-icon-color);
+	}
+
+
+	// [data-has-gradient="1"][data-icon-type="svg"]のときだけ出力される
+	.swell-block-box-menu__mask {
+		display: block;
+		width: var(--the-icon-size);
+		height: var(--the-icon-size);
+		background: var(--the-icon-gradient);
+		mask-repeat: no-repeat;
+		mask-position: center center;
+		mask-size: contain;
+		mask-image: var(--mask-image);
+
+		> * {
+			display: none; // attributes.iconHtml をソースから読み取るために残しているもの
+		}
+	}
+
+	@media (hover: hover) {
+
+		.has-link > .swell-block-box-menu__link:hover {
+			background-color: var(--swl-color_hov_gray);
+			// position: relative;
+			// z-index: 1;
+			// border-color: var(--the-hover-color);
+			// box-shadow: inset 0 0 0 1px var(--the-hover-color);
+		}
+	}
+
+}
+
+
+/**
+ スタイル：塗り
+　*/
+.swell-block-box-menu.is-style-fill {
+
+	.swell-block-box-menu__item {
+		color: var(--the-text-color, #fff);
+	}
+
+	.swell-block-box-menu__link {
+		padding: 1em 1.25em;
+		background: var(--the-icon-color);
+	}
+
+	[data-has-gradient="1"] {
+		--the-icon-color: var(--the-icon-gradient);
+	}
+
+	.swell-block-box-menu__figure > svg {
+		color: inherit;
+	}
+
+	@media (hover: hover) {
+
+		.has-link:hover {
+			box-shadow: 0 1px 8px 1px rgba(0, 0, 0, .15);
+			opacity: .8;
+		}
+	}
+
+}
+

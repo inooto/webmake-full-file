@@ -1,0 +1,31 @@
+[data-type="loos/rss"] {
+
+	a {
+		pointer-events: none;
+	}
+}
+
+.c-rssSite__favi {
+	width: 16px !important;
+	height: 16px !important;
+}
+
+// .wp-block-rss__placeholder と同様のスタイルを当てる
+.swl-block-rss__placeholder-form {
+	display: flex;
+	gap: 8px;
+
+	.swl-block-rss__placeholder-input {
+		flex: 1;
+		min-width: 80%;
+
+		.components-base-control__field {
+			margin-bottom: 0;
+		}
+
+		.components-text-control__input {
+			height: 36px;
+		}
+	}
+}
+

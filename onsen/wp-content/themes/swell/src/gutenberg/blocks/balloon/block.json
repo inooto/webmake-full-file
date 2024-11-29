@@ -1,0 +1,74 @@
+{
+	"apiVersion": 2,
+	"name": "loos/balloon",
+	"title": "ふきだし",
+	"category": "swell-blocks",
+	"keywords": [
+		"swell",
+		"balloon"
+	],
+	"supports": {
+		"className": false
+	},
+	"example": {
+		"attributes": {
+			"content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			"balloonName": "name",
+			"balloonCol": "blue",
+			"balloonIcon": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFAAAABQAQMAAAC032DuAAAAA1BMVEXPz896MPgHAAAAEElEQVQoz2MYBaNgFNANAAADcAABJi8F7gAAAABJRU5ErkJggg=="
+		}
+	},
+	"attributes": {
+		"className": {
+			"type": "string",
+			"default": ""
+		},
+		"content": {
+			"type": "string",
+			"source": "html",
+			"selector": "p",
+			"default": ""
+		},
+		"balloonID": {
+			"type": "string",
+			"default": "0"
+		},
+		"balloonTitle": {
+			"type": "string",
+			"default": ""
+		},
+		"balloonIcon": {
+			"type": "string",
+			"default": ""
+		},
+		"balloonName": {
+			"type": "string",
+			"default": ""
+		},
+		"balloonCol": {
+			"type": "string",
+			"default": ""
+		},
+		"balloonType": {
+			"type": "string",
+			"default": ""
+		},
+		"balloonAlign": {
+			"type": "string",
+			"default": ""
+		},
+		"balloonBorder": {
+			"type": "string",
+			"default": ""
+		},
+		"balloonShape": {
+			"type": "string",
+			"default": ""
+		},
+		"spVertical": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "swell"
+}

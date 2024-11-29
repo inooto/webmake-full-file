@@ -1,0 +1,556 @@
+@charset "UTF-8";
+/*
+    Template: swell
+    Theme Name: SWELL CHILD
+    Theme URI: https://swell-theme.com/
+    Description: SWELLの子テーマ
+    Version: 1.0.0
+    Author: LOOS WEB STUDIO
+    Author URI: https://loos-web-studio.com/
+
+    License: GNU General Public License
+    License URI: http://www.gnu.org/licenses/gpl.html
+*/
+
+/*=====================
+    大PC
+=====================*/
+
+/*------トップページ-----*/
+
+/*---メインビジュアル---*/
+.eachTextAnime span{
+	font-size: 8vh;
+	font-weight: bold;
+}
+
+.eachTextAnimed1 span,
+.eachTextAnimed2 span{
+	font-size: 5vh;
+}
+.eachTextAnime span,
+.eachTextAnimed1 span,
+.eachTextAnimed2 span{
+	opacity: 0;
+}
+
+.eachTextAnime.appeartext span,
+.eachTextAnimed1.appeartext span,
+.eachTextAnimed2.appeartext span{
+	display: inline-block;
+	animation: zoomout .5s ease-out forwards;
+}
+
+@keyframes zoomout {
+	0%{
+		transform: scale(5);
+		opacity: 0;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+/*---伸び背景---*/
+.top-posi-com{
+	position: relative;
+	top: -18vh;
+	left: -8vw;
+	font-size: 5vh;
+	font-weight: bold;
+	color: #ff8516;
+}
+
+.top-posi-gre{
+	position: relative;
+	top: -18vh;
+	left: 18vw;
+	font-size: 5vh;
+	font-weight: bold;
+	color: #ffdb2e;
+}
+
+.top-posi-pro{
+	position: relative;
+	top:18vh;
+	left: -10vw;
+	font-size: 5vh;
+	font-weight: bold;
+	color: #ff8516;
+}
+
+.top-posi-exp{
+	position: relative;
+	top: -16vh;
+	left: 17vw;
+	font-size: 5vh;
+	font-weight: bold;
+	color: #ffbd2e;
+}
+
+.bgextend{
+    animation-name: bgextendAnimeBase;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    position:relative;
+    overflow: hidden;
+    opacity: 0;
+}
+
+@keyframes bgextendAnimeBase{
+    from{
+        opacity: 0;
+    }to{
+        opacity: 1;
+    }
+}
+
+.bgappear{
+    animation-name: bgextendAnimeSecond;
+    animation-duration: 1s;
+    animation-delay: 0.6s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes bgextendAnimeSecond{
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.bgappearTrigger{
+    opacity: 0;
+}
+
+.bgLRextend::before{
+    animation-name: bgLRextendAnime;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.top-posi-com .bgLRextend::before,
+.top-posi-pro .bgLRextend::before{
+    background-color: #ff8516;
+}
+
+.top-posi-gre .bgLRextend::before,
+.top-posi-exp .bgLRextend::before{
+    background-color: #ffdb2e;
+}
+
+@keyframes bgLRextendAnime{
+    0%{
+        transform-origin: left;
+        transform: scaleX(0);
+    }
+    50%{
+        transform-origin: left;
+        transform: scaleX(1);
+    }
+    50.001%{
+        transform-origin:right;
+    }
+    100%{
+        transform-origin: right;
+        transform:scaleX(0);
+    }
+}
+
+.bgLRextendTrigger{
+    opacity: 0;
+}
+
+/*-----代表挨拶-----*/
+.message{
+	position: relative;
+	top: -120vh;
+	left: -5vw;
+	margin-bottom: -30vh;
+}
+
+.message h3{
+	font-size: 2vw;
+}
+
+.message p{
+	font-size: 1.7vw;
+}
+
+.message h3::before{
+	display: none;
+}
+
+/*-----製品情報-----*/
+
+/*スライダー*/
+
+.slider{
+    width: 94%;
+    margin: 0 auto;
+}
+
+.slider img{
+    width: 30vw;
+    height: auto;
+}
+
+.slider .slick-slide{
+    transform: scale(0.8);
+    transition: all .5s;
+    opacity: 0.5;
+}
+
+.slider .slick-slide.slick-center{
+    transform: scale(1);
+    opacity: 1;
+}
+
+.slick-prev,
+.slick-next{
+    position: absolute;
+    top: 42%;
+    cursor: pointer;
+    outline: none;
+    border-top: 2px solid #ff8516;
+    border-right: 2p solid #ff8516;
+    height: 15px;
+    width: 15px;
+}
+
+.slick-prev{
+    left: -1.5%;
+    transform: rotate(-135deg);
+}
+
+.slick-next{
+    right: -1.5%;
+    transform: rotate(45deg);
+}
+
+.slick-dots{
+    text-align: center;
+    margin: 20px 0 0 0;
+}
+
+.slick-dots li{
+    display: inline-block;
+    margin: 0 5px;
+}
+
+.slick-dots button{
+    color: transparent;
+    outline: none;
+    width: 8px;
+    height: 8px;
+    display: block;
+    border-radius: 50%;
+    background: #e9c475;
+}
+
+.slick-dots .slick-active button{
+    background: #ff8516;
+}
+
+/*--ギャラリー--*/
+
+.gallery img{
+    width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+.gallery{
+    margin: 0 0 5px 0;
+}
+
+.gallery li{
+    list-style: none;
+}
+
+.slick-prev,
+.slick-next{
+    position: absolute;
+    z-index: 3;
+    top: 42%;
+    cursor: pointer;
+    outline: none;
+    border-top: 5px solid #ff8516;
+    border-right: 5px solid #ff8516;
+    height: 25px;
+    width: 25px;
+}
+
+.slick-prev{
+    left: 2.5%;
+    transform: rotate(-135deg);
+}
+
+.slick-next{
+    right: 2.5%;
+    transform: rotate(45deg);
+}
+
+.choice-btn{
+    width: 60%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.choice-btn li{
+    cursor: pointer;
+    outline: none;
+    list-style: none;
+}
+
+.choice-btn li img{
+    opacity: 0.4;
+}
+
+.choice-btn li.slick-current img{
+    opacity: 1;
+}
+
+/*-----お問い合わせ-----*/
+
+#cf7-area{
+    width:100%;
+    margin: 0 auto;
+}
+
+.cf7-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 0 0 1.75em;
+}
+
+.cf7-q {
+    width: 30%;
+    margin: 0 0 0 10px;
+}
+
+.cf7-a {
+    width: 60%;
+}
+
+/*-見出し-*/
+.form-heading{
+    width: 100%;
+    background-color: #ff8516;
+    border-left: 1em solid #ffdb2e;
+    border-radius: 2px;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 1em .8em;
+    margin: 0 0 2em;
+}
+
+.form-heading p {
+    margin: 0;
+}
+
+/*-各項目共通-*/
+#cf7-area label{
+    font-weight:bold;
+}
+
+#cf7-area input[type="text"],
+#cf7-area input[type ="email"],
+#cf7-area input[type="tel"],
+#cf7-area textarea {
+    background: #F0F8FF;
+    width:500px;
+    margin-left:10px;
+}
+
+#cf7-area input[type="text"]:focus,
+#cf7-area input[type="email"]:focus,
+#cf7-area input[type="tel"]:focus,
+#cf7-area textarea:focus {
+    background:rgba(253, 194, 100, 0.8);
+    border: 2px solid #ff8516;
+    outline: 0;
+}
+
+#cf7-area input[type="checkbox"]{
+    appearance: auto;
+}
+
+#cf7-area .wpcf7-list-item {
+    display: block;
+}
+
+#cf7-area textarea{
+    height:200px;
+    padding: 0.625em 0.4375em;
+}
+
+.cf7-submit {
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#cf7-area input[type="submit"]{
+    width: 100%;
+    background-color: #ff8516;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 1.2em;
+    padding: 1em 10px;
+}
+
+#cf7-area input[type="submit"]:hover{
+    background-color:#ffffff;
+    border: 2px solid #ff8516;
+    color:#ff8516;
+}
+
+.cf7-btn{
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/*-必須ラベル-*/
+.cf7-req{
+    font-size:.8em;
+    padding: 4px 6px;
+    background: #eb2a2a;
+    color: #ffffff;
+    margin-left: 10px;
+    display:inline-block;
+}
+
+@media screen and (max-width:768px){
+    .cf7-item {
+        display: block;
+    }
+  
+    #cf7-area label{
+        display: block;
+        margin-bottom: 10px;
+    }
+  
+    .cf7-q {
+        width: 100%;
+        margin: 0;
+    }
+  
+    .cf7-a {
+        width: 100%;
+    }
+  
+    #cf7-area input[type="text"],
+    #cf7-area input[type="email"],
+    #cf7-area input[type="tel"], 
+    #cf7-area textarea{
+        margin-left: 0;
+    }
+  
+    .cf7-submit{
+        width: 90%;
+    }
+}
+
+/*-----PC-----*/
+@media screen and (max-width: 1300px) {
+	.top-posi-com{
+		top: -27vh;
+	}
+	
+	.top-posi-gre{
+		top:-28vh;
+		left: 28vw;
+	}
+	
+	.top-posi-exp{
+		top: -23vh;
+		left: 28vw;
+	}
+    /*-----代表挨拶-----*/
+    .message{
+        margin-bottom: -50vh;
+    }
+    .message h3{
+        font-size: 3vw;
+    }
+    
+    .message p{
+        font-size: 2vw;
+    }
+}
+/*-----タブレット-----*/
+@media screen and (max-width: 959px) {
+	.eachTextAnime span{
+	font-size: 5vh;
+}
+
+.eachTextAnimed1 span,
+.eachTextAnimed2 span{
+	font-size: 2.5vh;
+}
+	
+	.top-posi-com{
+		left: 0;
+	}
+	
+	.top-posi-gre{
+		left: 35vw;
+	}
+	
+	.top-posi-pro{
+		top: 10vh;
+		left: 0;
+	}
+	/*-----代表挨拶-----*/
+	.message{
+		top: -40vh;
+		left: 0;
+	}
+    .message h3{
+        font-size: 3vw;
+    }
+    .message p{
+        font-size: 2vw;
+    }
+}
+
+/*-----スマホ-----*/
+@media screen and (max-width: 600px) {
+	.top-posi-com,
+	.top-posi-gre,
+	.top-posi-pro{
+		font-size: 3.5vh;
+	}
+	
+	.top-posi-gre{
+		left: 30vw;
+	}
+	
+	.top-posi-pro{
+		top: 8vh;
+	}
+	
+	/*-----代表挨拶-----*/
+	.message{
+		top: -50vh;
+		margin-bottom: -30vh;
+	}
+	
+	.message h3{
+		font-size: 3.5vw;
+	}
+	
+	.message p{
+		font-size: 3vw;
+	}
+}

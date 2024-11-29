@@ -1,0 +1,29 @@
+{
+	"apiVersion": 2,
+	"name": "loos/blog-parts",
+	"title": "ブログパーツ",
+	"category": "swell-blocks",
+	"supports": {
+		"className": false
+	},
+	"keywords": [
+		"swell",
+		"blogparts",
+		"parts"
+	],
+	"attributes": {
+		"className": {
+			"type": "string",
+			"default": ""
+		},
+		"partsTitle": {
+			"type": "string",
+			"default": ""
+		},
+		"partsID": {
+			"type": "string",
+			"default": ""
+		}
+	},
+	"textdomain": "swell"
+}

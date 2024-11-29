@@ -1,0 +1,379 @@
+/*
+.swell-block-tab[.is-style-HOGE]
+
+    ul.c-tabList -> 投稿リストにはこっちに [.is-style-HOGE]
+        .c-tabList__item
+        .c-tabList__item
+    div.c-tabBody
+        .c-tabBody__item
+        .c-tabBody__item
+
+*/
+
+// アーカイブ用タブのみ
+.p-postListTab {
+    width: 96%;
+    margin: 4em auto 2em;
+}
+
+
+.c-tabList {
+    --the-tab-margin: 0;
+    --the-tab-flex: 0 1 auto;
+    --the-tab-flex_wrap: nowrap;
+    --the-tab-btn-padding: 1em .5em;
+    --the-tab-item-margin: 0;
+
+    position: relative;
+    display: flex;
+    flex-wrap: var(--the-tab-flex_wrap);
+    justify-content: center;
+    margin: var(--the-tab-margin);
+
+    .swell-block-tab > & {
+        padding: 0;
+        list-style: none;
+    }
+
+    #content & {
+        padding-left: 0;
+        list-style: none;
+    }
+
+
+    @include pc {
+
+        [data-width-pc="auto"] > & {
+            --the-tab-flex_wrap: wrap;
+            --the-tab-btn-padding: 1em;
+        }
+
+        [data-width-pc="25"] > & {
+            --the-tab-flex_wrap: wrap;
+            --the-tab-flex: 0 0 25%;
+        }
+
+        [data-width-pc="flex-50"] > & {
+            --the-tab-flex: 0 1 50%;
+        }
+
+        [data-width-pc="flex-auto"] > & {
+            --the-tab-flex: 1 1 auto;
+        }
+    }
+
+    @include sp {
+
+        [data-width-sp="auto"] > & {
+            --the-tab-flex_wrap: wrap;
+            --the-tab-btn-padding: 1em;
+        }
+
+        [data-width-sp="50"] & {
+            --the-tab-flex_wrap: wrap;
+            --the-tab-flex: 0 0 50%;
+        }
+
+        [data-width-sp="flex-50"] & {
+            --the-tab-flex: 0 1 50%;
+        }
+
+        [data-width-sp="flex-auto"] & {
+            --the-tab-flex: 1 1 auto;
+        }
+    }
+
+    &::-webkit-scrollbar {
+        height: 11px;
+        background-color: var(--color_gray);
+        box-shadow: inset 0 0 2px 0 rgba(0, 0, 0, .15);
+    }
+
+    // &::-webkit-scrollbar-track {
+    //     background: none;
+    //     border: none;
+    // }
+
+    &::-webkit-scrollbar-thumb {
+        background: rgba(200, 200, 200, .9);
+        background-clip: padding-box;
+        border: solid 3px transparent;
+        border-bottom-width: 4px;
+        border-radius: 8px;
+    }
+
+}
+
+
+.c-tabList .c-tabList__item {
+    flex: var(--the-tab-flex);
+    margin: var(--the-tab-item-margin);
+    text-align: center;
+}
+
+.c-tabList__button {
+    position: relative;
+    display: block;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    padding: var(--the-tab-btn-padding);
+    color: var(--color_text);
+    font-size: 13px;
+    line-height: 1;
+    border: none;
+    transition: background-color .25s, color .25s;
+
+    @include tab {
+        font-size: 14px;
+    }
+
+    &:hover {
+        outline: none; //マウス操作ではアウトライン非表示
+    }
+}
+
+.c-tabBody {
+    position: relative;
+}
+
+// .c-tabBody__item{}
+.is-style-balloon,
+.is-style-bb,
+.is-style-simple {
+    --the-tab-margin: 0 0 1em;
+}
+
+@include sp {
+
+    [data-scroll-sp] {
+
+        &.swell-block-tab {
+            position: relative;
+
+            &::after {
+                position: absolute;
+                right: -2px;
+                bottom: 100%;
+                padding: 2px 12px 2px 4px;
+                color: #333;
+                font-weight: 400;
+                font-size: 13px;
+                font-family: icomoon !important;
+                line-height: 1;
+                letter-spacing: -8px;
+                background: #fff;
+                border-radius: 8px;
+                box-shadow: 0 0 8px rgba(0, 0, 0, .1);
+                animation: FloatHorizontal 3s ease-in-out infinite alternate;
+                content: "\e921\e921"; //.icon-chevron-right
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+            }
+        }
+
+        &.has-background,
+        &.has-border {
+
+            &::after {
+                right: 4px;
+                bottom: calc(100% - 1.5em);
+            }
+        }
+
+        > .c-tabList {
+            z-index: 1;
+            flex-wrap: nowrap !important;
+            justify-content: flex-start;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+
+            .c-tabList__item {
+                flex-shrink: 0;
+            }
+        }
+
+        &.is-style-bb > .c-tabList {
+            --the-tab-item-margin: 0 0 4px;
+        }
+    }
+}
+
+@include pc {
+
+    [data-scroll-pc] {
+
+        > .c-tabList {
+            z-index: 1;
+            flex-wrap: nowrap !important;
+            justify-content: flex-start;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            scroll-behavior: smooth;
+
+            .c-tabList__item {
+                flex-shrink: 0;
+            }
+        }
+
+
+        &.is-style-bb > .c-tabList {
+            --the-tab-item-margin: 0 0 4px;
+        }
+    }
+}
+
+//通常タブ
+.is-style-default {
+
+    > .c-tabList {
+        position: relative;
+        justify-content: flex-start;
+        width: 100%;
+        margin: 0;
+
+        .c-tabList__button {
+            box-sizing: border-box;
+            padding-top: .75em;
+            padding-bottom: .75em;
+            background: none;
+            opacity: .5;
+
+            &:hover,
+            &[aria-selected="true"] {
+                color: var(--color_content_bg);
+                background-color: var(--color_text);
+                opacity: 1;
+
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+}
+
+// ふきだし
+.is-style-balloon {
+
+    > .c-tabList {
+        --the-tab-item-margin: 0 0 16px;
+
+        .c-tabList__item {
+            padding: 0 4px;
+            transition: background-color .1s, color .1s;
+        }
+
+        .c-tabList__button {
+            background: var(--color_gray);
+            transition: background-color .25s, color .25s;
+
+            &::before {
+                position: absolute;
+                bottom: -8px;
+                left: 50%;
+                display: block;
+                width: 0;
+                height: 0;
+                border: solid 8px transparent;
+                border-top-color: var(--color_main);
+                border-bottom: 0;
+                transform: translateX(-50%);
+                opacity: 0;
+                transition: opacity .25s;
+                content: "";
+            }
+
+            &:hover,
+            &[aria-selected="true"] {
+                color: #fff;
+                background-color: var(--color_main);
+
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+// グレーボックス
+.is-style-simple {
+
+    >.c-tabList {
+        --the-tab-item-margin: 0 0 8px;
+
+        .c-tabList__item:not(:first-child) {
+            margin-left: -1px;
+        }
+
+        .c-tabList__button {
+            color: #666;
+            background: none;
+            border: solid 1px #ddd;
+            box-shadow: none;
+
+            &:hover,
+            &[aria-selected="true"] {
+                color: #333;
+                background: #ddd;
+
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}
+
+// 下線
+.is-style-bb > .c-tabList {
+    --the-tab-item-margin: 0 0 .75em;
+
+    .c-tabList__button {
+        padding-top: .25em;
+        background: none;
+        box-shadow: none;
+        opacity: .7;
+        transition: color .25s, opacity .25s;
+
+        &::before,
+        &::after {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            display: block;
+            width: 100%;
+            content: "";
+        }
+
+        &::before {
+            z-index: 0;
+            height: 1px;
+            background-color: var(--color_text);
+            opacity: .4;
+        }
+
+        &::after {
+            z-index: 1;
+            height: 2px;
+            background-color: var(--color_main);
+            opacity: 0;
+            transition: opacity .25s;
+        }
+
+        &:hover,
+        &[aria-selected="true"] {
+            color: var(--color_main);
+            font-weight: bold;
+            opacity: 1;
+
+            &::after {
+                opacity: 1;
+            }
+        }
+    }
+
+}

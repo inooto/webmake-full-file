@@ -1,0 +1,77 @@
+{
+	"apiVersion": 2,
+	"name": "loos/faq",
+	"title": "FAQ",
+	"category": "swell-blocks",
+	"keywords": [
+		"swell",
+		"faq",
+		"qa"
+	],
+	"supports": {
+		"anchor": true,
+		"className": false
+	},
+	"providesContext": {
+		"swell/faq/titleTag": "titleTag"
+	},
+	"example": {
+		"attributes": {
+			"qIconStyle": "fill-custom",
+			"aIconStyle": "fill-custom"
+		},
+		"innerBlocks": [
+			{
+				"name": "loos/faq-item",
+				"attributes": {
+					"contentQ": "Question ?"
+				},
+				"innerBlocks": [
+					{
+						"name": "core/paragraph",
+						"attributes": {
+							"content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+						}
+					}
+				]
+			},
+			{
+				"name": "loos/faq-item",
+				"attributes": {
+					"contentQ": "Question ?"
+				},
+				"innerBlocks": [
+					{
+						"name": "core/paragraph",
+						"attributes": {
+							"content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
+						}
+					}
+				]
+			}
+		]
+	},
+	"attributes": {
+		"iconRadius": {
+			"type": "string",
+			"default": ""
+		},
+		"qIconStyle": {
+			"type": "string",
+			"default": "col-text"
+		},
+		"aIconStyle": {
+			"type": "string",
+			"default": "col-text"
+		},
+		"outputJsonLd": {
+			"type": "boolean",
+			"default": false
+		},
+		"titleTag": {
+			"type": "string",
+			"default": "dt"
+		}
+	},
+	"textdomain": "swell"
+}

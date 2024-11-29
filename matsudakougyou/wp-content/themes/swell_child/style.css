@@ -1,0 +1,546 @@
+@charset "UTF-8";
+/*
+    Template: swell
+    Theme Name: SWELL CHILD
+    Theme URI: https://swell-theme.com/
+    Description: SWELLの子テーマ
+    Version: 1.0.0
+    Author: LOOS WEB STUDIO
+    Author URI: https://loos-web-studio.com/
+
+    License: GNU General Public License
+    License URI: http://www.gnu.org/licenses/gpl.html
+*/
+
+/*=======================
+    大サイズpc
+=======================*/
+
+/*-----トップページ-----*/
+.main-text {
+    font-size: 50px;
+    font-weight: bold;
+    margin-top: 50px;
+    margin-left: 100px;
+}
+  
+.eachTextAnime span{opacity: 0;}
+
+.eachTextAnime.appeartext span{
+	animation:text_anime_on 1s ease-out forwards;
+}
+
+@keyframes text_anime_on{
+	0% {opacity:0;}
+	100% {opacity:1;}
+}
+
+#content {
+    padding-top: 0 !important;
+    margin-bottom: 0;
+}
+
+.bule{
+    background-color: rgba( 50, 163, 229, 0.3);
+    width: 100%;
+    height: 250px;
+    clip-path: polygon(0 0, 0 100%, 100% 100%);
+    position: absolute;
+    top: -250px;
+    z-index:1
+}
+
+.bule2{
+    background-color: rgba( 50, 107, 229, 0.5);
+    position: absolute;
+    width: 100%;
+    height: 350px;
+    clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+    position: absolute;
+    top: -350px;
+    z-index: 2;
+}
+
+.bule3{
+    background-color: rgba(50, 50, 229, 0.8);
+    width: 100%;
+    height: 400px;
+    clip-path: polygon(0 50%, 100% 0, 100% 50%, 0% 100%);
+    position: absolute;
+    top: -200px;
+    z-index:3
+}
+
+.bule4{
+    background-color: rgba(20, 35, 100, 0.95);
+    width: 100%;
+    height: 300px;
+    clip-path: polygon(0 0, 100% 40%, 100% 100%, 0 60%);
+    position: absolute;
+    top: 430px;
+    left: 0;
+    z-index:3
+}
+
+.about{
+    color: rgba(255,255,255,0.5);
+    font-size: 80px;
+    font-weight: bold;
+    position: absolute;
+    top: -80px;
+    left: -150px;
+    z-index: 5;
+}
+
+.in-content{
+    color:  rgba(200,200,227,0.7);
+    font-size: 80px;
+    font-weight: bold;
+    position: absolute;
+    top: -90px;
+    right: -100px;
+}
+
+.exp{
+    color: rgba(230,230,250,0.8);
+    font-size: 80px;
+    font-weight: bold;
+    position: absolute;
+    top: -70px;
+    left: -130px;
+}
+
+.recruit{
+    color: rgba(230,230,250,0.8);
+    font-size: 80px;
+    font-weight: bold;
+    position: absolute;
+    top: -80px;
+    right: -230px;
+}
+
+.news{
+    color:rgba(230,230,250,0.8);
+    font-size: 80px;
+    font-weight: bold;
+    position: absolute;
+    top: -80px;
+    left: -20px;
+}
+
+.contact{
+    color:rgba(230,230,250,0.8);
+    font-size: 80px;
+    font-weight: bold;
+    position: absolute;
+    top: -90px;
+    left: 100px;
+}
+
+.center{
+    text-align: center;
+}
+
+.center h3{
+    font-size: 30px;
+    margin-bottom: 10px;
+    margin-top: 30px;
+}
+
+/*-----事業内容-----*/
+
+.c-pageTitle{
+    width: 300px;
+    font-size: 50px;
+}
+
+.strength{
+    position: absolute;
+    color: rgba(230,230,230,0.8);
+    font-size: 80px;
+    font-weight: bold;
+    top: 50px;
+    right: 40px;
+}
+
+.fjigyoua{
+    position: absolute;
+    width: 600px;
+    padding: 30px;
+    background-color: #fff;
+    top: -250px;
+    left: -100px;
+    border-bottom: 2px solid rgba(230,230,230,0.8);
+}
+
+.wjigyoua{
+    position: absolute;
+    color: rgba(230,230,230,0.8);
+    font-size: 80px;
+    font-weight: bold;
+    top: -230px;
+    right: 50px;
+}
+
+.fjigyoub{
+    position: absolute;
+    width: 600px;
+    padding: 30px;
+    background-color: #fff;
+    top: -250px;
+    right: -100px;	
+    border-bottom: 2px solid rgba(230,230,230,0.8);
+}
+
+.wjigyoub{
+    position: absolute;
+    color: rgba(230,230,230,0.8);
+    font-size: 80px;
+    font-weight: bold;
+    top: -230px;
+    left: 50px;
+}
+
+/*-----施工事例-----*/
+
+.cp-jigyou,
+.cp-about,
+.cp-recruit{
+    position: absolute;
+    color: rgba(200,200,200,0.8);
+    font-size: 70px;
+    font-weight: bold;
+    top: -70px;
+    left: -50px;
+}
+
+/*-----お問い合わせ-----*/
+
+#cf7-area{
+    width:100%;
+    margin: 0 auto;
+}
+
+.cf7-item {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    margin: 0 0 1.75em;
+}
+
+.cf7-q {
+    width: 30%;
+    margin: 0 0 0 10px;
+}
+
+.cf7-a {
+    width: 60%;
+}
+
+/*-見出し-*/
+.form-heading{
+    width: 100%;
+    background-color: #191970;
+    border-left: 1em solid #6495ED;
+    border-radius: 2px;
+    color: #ffffff;
+    font-weight: bold;
+    padding: 1em .8em;
+    margin: 0 0 2em;
+}
+
+.form-heading p {
+    margin: 0;
+}
+
+/*-各項目共通-*/
+#cf7-area label{
+    font-weight:bold;
+}
+
+#cf7-area input[type="text"],
+#cf7-area input[type ="email"],
+#cf7-area input[type="tel"],
+#cf7-area textarea {
+    background: #F0F8FF;
+    width:500px;
+    margin-left:10px;
+}
+
+#cf7-area input[type="text"]:focus,
+#cf7-area input[type="email"]:focus,
+#cf7-area input[type="tel"]:focus,
+#cf7-area textarea:focus {
+    background:rgba(200,200,250,0.8);
+    border: 2px solid #191970;
+    outline: 0;
+}
+
+#cf7-area input[type="checkbox"]{
+    appearance: auto;
+}
+
+#cf7-area .wpcf7-list-item {
+    display: block;
+}
+
+#cf7-area textarea{
+    height:200px;
+    padding: 0.625em 0.4375em;
+}
+
+.cf7-submit {
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+#cf7-area input[type="submit"]{
+    width: 100%;
+    background-color: #191970;
+    color: #ffffff;
+    border-radius: 5px;
+    font-size: 1.2em;
+    padding: 1em 10px;
+}
+
+#cf7-area input[type="submit"]:hover{
+    background-color:#ffffff;
+    border: 2px solid #191970;
+    color:#191970;
+}
+
+.cf7-btn{
+    width: 40%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+/*-必須ラベル-*/
+.cf7-req{
+    font-size:.8em;
+    padding: 4px 6px;
+    background: #eb2a2a;
+    color: #ffffff;
+    margin-left: 10px;
+    display:inline-block;
+}
+
+@media screen and (max-width:768px){
+    .cf7-item {
+        display: block;
+    }
+  
+    #cf7-area label{
+        display: block;
+        margin-bottom: 10px;
+    }
+  
+    .cf7-q {
+        width: 100%;
+        margin: 0;
+    }
+  
+    .cf7-a {
+        width: 100%;
+    }
+  
+    #cf7-area input[type="text"],
+    #cf7-area input[type="email"],
+    #cf7-area input[type="tel"], 
+    #cf7-area textarea{
+        margin-left: 0;
+    }
+  
+    .cf7-submit{
+        width: 90%;
+    }
+}
+  
+/*=======================
+          pc
+=======================*/
+@media screen and (max-width: 1100px) {
+    /*-----トップページ-----*/
+    .main-text {
+        font-size: 40px;
+        font-weight: bold;
+        margin-top: 40px;
+        margin-left: 60px;
+    }
+      
+    .bule{
+        height: 130px;
+        top: -130px;
+    }
+    
+    .bule2{
+        height: 230px;
+        top: -230px;
+    }
+    
+    .bule3{
+        height: 300px; 
+        top: -150px;
+    }
+    
+    /*-----事業内容-----*/
+    .fjigyoua{
+        top: -150px;
+        left: 0;
+    }
+    
+    .wjigyoua{
+        font-size: 70px;
+        top: -180px;
+    }
+    
+    .fjigyoub{
+        top: -150px;
+        right: 0;
+    }
+    
+    .wjigyoub{
+        font-size: 70px;
+        top: -210px;
+    }
+    
+    /*-----固定ページ-----*/
+    .cp-jigyou,
+    .cp-about,
+    .cp-recruit{
+        left: 0px;
+    }
+      
+  }
+  
+/*=======================
+   　　 タブレット
+=======================*/
+@media screen and (max-width: 959px) {
+    /*-----トップページ-----*/
+    .main-text {
+        font-size: 35px;
+        font-weight: bold;
+    }
+    
+    .bule4{
+        top: 330px;
+    }
+    
+    .about{
+        left: 10px;
+    }
+    
+    .in-content{
+        right: 20px;
+    }
+    
+    .exp{
+        left: 10px;
+    }
+    
+    .recruit{
+        right: 10px;
+    }
+    
+    .contact{
+        left: 30px;
+    }
+    
+    /*-----固定ペ－ジ-----*/
+    .cp-jigyou,
+    .cp-about,
+    .cp-recruit{
+        left: 10px;
+    }
+    
+    /*-----求人情報-----*/
+    .cp-recruit.app{
+        top: -50px;
+        font-size: 50px;
+    }
+    
+}
+/*=======================
+    スマホ
+=======================*/
+@media screen and (max-width: 600px) {
+    /*-----トップページ-----*/
+    .main-text {
+        font-size: 30px;
+        font-weight: bold;
+        margin-left: 0;
+    }
+      
+    .bule{
+        height: 150px;
+        top: -150px;
+    }
+    
+    .bule2{
+        height: 200px;
+        top: -200px;
+    }
+    
+    .bule3{
+        height: 200px;
+        top: -100px;
+    }
+    
+    .bule4{
+        clip-path: polygon(0 10%, 100% 30%, 100% 80%, 0 60%);
+        top: 420px;
+    }
+    
+    .recruit{
+        font-size: 60px;
+        top: -60px;
+    }
+    
+    .contact{
+        font-size: 60px;
+        top: -70px;
+    }
+    
+    .strength{
+        font-size: 60px;
+        right: 0;
+    }
+    
+    .fjigyoua{
+        width: 350px;
+        top: -200px;
+    }
+    
+    .wjigyoua{
+        font-size: 50px;
+        top: -250px;
+    }
+    
+    .fjigyoub{
+        width: 350px;
+        top: -200px;
+    }
+    
+    .wjigyoub{
+        font-size: 50px;
+        top: -250px;
+    }
+    
+    /*-----固定ページ-----*/
+    .c-pageTitle{
+        font-size: 30px;
+    }
+    
+    .cp-about.profile{
+        font-size: 35px;
+        top: -30px;
+    }
+    
+    .cp-recruit.app{
+        top: -30px;
+        font-size: 25px;
+    }
+      
+}

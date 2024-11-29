@@ -1,0 +1,250 @@
+@import "../../../scss/foundation/mixin/media";
+
+.swell-block-step {
+	counter-reset: step;
+	--swl-step_arrow_color: #dedede;
+}
+
+.swell-block-step__item {
+	position: relative;
+	margin-bottom: 0 !important;
+	padding: 0 0 3em 64px;
+
+	&::before {
+		position: absolute;
+		top: 0;
+		left: 23px;
+		display: block;
+		width: 0px;
+		height: 100%;
+		border-left: 1px dashed var(--color_border);
+		content: "";
+	}
+
+	&:last-child::before {
+		content: none;
+	}
+
+	.swell-block-step__title {
+		margin: 0;
+		padding: 0;
+		font-weight: bold;
+	}
+
+}
+
+.swell-block-step__number {
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	box-sizing: content-box;
+	width: 48px;
+	height: 48px;
+	color: #fff;
+	line-height: 1;
+	text-align: center;
+
+	.__label {
+		display: block;
+		padding-bottom: 1px;
+		font-size: 10px;
+		content: attr(data-label);
+	}
+
+	&::after {
+		display: block;
+		font-size: 20px;
+		content: counter(step);
+		counter-increment: step;
+	}
+
+	&[data-num]::after {
+		content: attr(data-num);
+	}
+
+	&[data-hide] {
+
+		&::after,
+		.__label {
+			display: none;
+		}
+	}
+
+	[data-num-style="circle"] & {
+		border-radius: 50%;
+
+		.__shape {
+			border-radius: 50%;
+		}
+	}
+
+	[data-num-style="horizontal"] & {
+		flex-direction: row;
+		align-items: flex-end;
+
+		.__label {
+			padding-right: 4px;
+			padding-bottom: 4px;
+		}
+	}
+}
+
+.swell-block-step__body {
+
+	.swell-block-step__title + & {
+		margin-top: 1em;
+	}
+}
+
+
+// 最後のpadding-bottomを消す
+.swell-block-step:not(.is-style-big) > .swell-block-step__item:last-child {
+	padding-bottom: 0;
+}
+
+// デフォルトスタイル(1行の時に番号とセンターが合うように)
+//.swell-block-step.is-style-default,
+.swell-block-step:not(.is-style-big):not(.is-style-small) {
+
+	> .swell-block-step__item > .swell-block-step__title {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		min-height: 48px;
+	}
+
+
+	@include mobile {
+
+		> .swell-block-step__item::before {
+			display: none;
+		}
+
+		> .swell-block-step__item > .swell-block-step__body {
+			margin-left: -48px;
+		}
+	}
+}
+
+
+.is-style-big {
+
+	> .swell-block-step__item {
+		padding: 2em;
+		border-bottom: dashed 1px var(--swl-step_arrow_color);
+
+		@include mobile {
+			padding: 2em 1em;
+		}
+
+		&:first-child {
+			border-top: dashed 1px var(--swl-step_arrow_color);
+		}
+
+		&::before {
+			top: 100%;
+			left: 50%;
+			display: block;
+			width: 0px;
+			height: 0px;
+			border: solid 12px transparent;
+			border-top-color: var(--swl-step_arrow_color);
+			transform: translateX(-50%);
+		}
+
+	}
+
+	> .swell-block-step__item > .swell-block-step__number {
+		position: relative;
+		width: auto;
+		height: auto;
+		margin: 0 auto 1em;
+		color: inherit;
+		border-radius: 0;
+
+		.__label {
+			font-size: 12px;
+		}
+
+		&::after {
+			font-size: 24px;
+		}
+	}
+
+	.swell-block-step__title {
+		text-align: center;
+	}
+
+}
+
+
+// 内部で使われる可能性があるので最後に書く（詳細度強く）
+.is-style-small {
+
+	.swell-block-step__item {
+		padding: 0 0 2em 24px;
+
+		&::before {
+			top: 18px;
+			left: 7px;
+			height: calc(100% - 20px);
+			border-left: 2px solid var(--color_border);
+			// content: "" !important;
+		}
+	}
+
+	.swell-block-step__title {
+		margin-top: .25em;
+		text-align: left;
+	}
+
+	.swell-block-step__body {
+		margin-top: .5em;
+	}
+
+	// .swell-block-step__item:first-child .__shape,
+	// .swell-block-step__item:last-child .__shape {
+	//     background: currentColor;
+	//     // border-width: 6px;
+	// }
+
+	.swell-block-step__number {
+		position: relative;
+		flex-direction: row;
+		align-items: center;
+		justify-content: flex-start;
+		width: auto;
+		height: auto;
+		margin-left: -24px;
+		color: inherit;
+
+		.__shape {
+			box-sizing: border-box; //エディター用
+			width: 16px;
+			height: 16px;
+			margin-right: 8px;
+			border: solid 2px currentcolor;
+		}
+
+		.__label {
+			padding: 0 2px 0 0;
+			font-size: 12px;
+			opacity: .8;
+		}
+
+		&::after {
+			font-size: 14px;
+			opacity: .8;
+		}
+	}
+
+	// .swell-block-step__number[data-hide] {margin-bottom: calc(-16px - .4em);}
+
+	[data-hide] + .swell-block-step__title {
+		margin-top: -24px;
+	}
+
+}

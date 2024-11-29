@@ -1,0 +1,54 @@
+{
+	"apiVersion": 2,
+	"name": "loos/link-list",
+	"title": "リンクリスト",
+	"category": "swell-blocks",
+	"keywords": [
+		"swell"
+	],
+	"supports": {
+		"anchor": true,
+		"className": false
+	},
+	"providesContext": {
+		"swell/link-list/icon": "icon",
+		"swell/link-list/iconPos": "iconPos"
+	},
+	"example": {},
+	"attributes": {
+		"listStyle": {
+			"type": "string",
+			"default": "default"
+		},
+		"icon": {
+			"type": "string",
+			"default": "arrowCircleRight"
+		},
+		"iconPos": {
+			"type": "string",
+			"default": "left"
+		},
+		"radius": {
+			"type": "string"
+		},
+		"fontSize": {
+			"type": "string"
+		},
+		"color": {
+			"type": "string"
+		},
+		"hasBorder": {
+			"type": "boolean",
+			"default": false
+		},
+		"isFlex": {
+			"type": "boolean",
+			"default": false
+		},
+		"isFill": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"textdomain": "swell"
+}

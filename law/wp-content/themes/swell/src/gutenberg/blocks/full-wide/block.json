@@ -1,0 +1,107 @@
+{
+	"apiVersion": 2,
+	"name": "loos/full-wide",
+	"title": "フルワイド",
+	"category": "swell-blocks",
+	"keywords": [
+		"swell",
+		"fullwide"
+	],
+	"supports": {
+		"anchor": true,
+		"className": false
+	},
+	"example": {
+		"innerBlocks": [
+			{
+				"name": "core/heading",
+				"attributes": {
+					"className": "is-style-section_ttl",
+					"level": 2,
+					"content": "Full Wide Block."
+				}
+			},
+			{
+				"name": "core/paragraph",
+				"attributes": {
+					"className": "has-text-align-center",
+					"content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+				}
+			}
+		]
+	},
+	"attributes": {
+		"align": {
+			"type": "string",
+			"default": "full"
+		},
+		"bgColor": {
+			"type": "string",
+			"default": "#f7f7f7"
+		},
+		"textColor": {
+			"type": "string",
+			"default": ""
+		},
+		"bgImageUrl": {
+			"type": "string",
+			"default": ""
+		},
+		"bgImageID": {
+			"type": "number",
+			"default": 0
+		},
+		"bgOpacity": {
+			"type": "number",
+			"default": 100
+		},
+		"contentSize": {
+			"type": "string",
+			"default": "article"
+		},
+		"pcPadding": {
+			"type": "string",
+			"default": "60"
+		},
+		"spPadding": {
+			"type": "string",
+			"default": "40"
+		},
+		"bgFocalPoint": {
+			"type": "object"
+		},
+		"isFixBg": {
+			"type": "boolean",
+			"default": false
+		},
+		"isParallax": {
+			"type": "boolean",
+			"default": false
+		},
+		"topSvgType": {
+			"type": "string",
+			"default": "line"
+		},
+		"topSvgLevel": {
+			"type": "number",
+			"default": 0
+		},
+		"bottomSvgType": {
+			"type": "string",
+			"default": "line"
+		},
+		"bottomSvgLevel": {
+			"type": "number",
+			"default": 0
+		},
+		"isReTop": {
+			"type": "boolean",
+			"default": false
+		},
+		"isReBottom": {
+			"type": "boolean",
+			"default": false
+		}
+	},
+	"textdomain": "swell"
+}

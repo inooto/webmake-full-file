@@ -1,0 +1,186 @@
+@import "../../../scss/foundation/mixin/media";
+// @import "../../../scss/foundation/placeholder";
+
+// リンクリスト
+.swell-block-linkList__icon {
+	flex: 0 0 auto;
+	font-size: 1.25em;
+	// position: static;
+
+	&.-left {
+		order: 0;
+		margin-left: var(--the-icon-offset);
+	}
+
+	&.-right {
+		order: 2;
+		margin-right: var(--the-icon-offset);
+	}
+}
+
+
+.swell-block-linkList__link {
+	position: relative;
+	display: flex;
+	flex-shrink: 0;
+	gap: .25em;
+	align-items: center;
+	margin: 0 auto;
+	padding: var(--the-list-padding);
+	color: inherit;
+	line-height: 1.4;
+	text-decoration: none;
+}
+
+.swell-block-linkList__text {
+	order: 0;
+}
+
+.swell-block-linkList {
+	--the-color: var(--color_text);
+	--the-radius: 100px;
+	--the-fz: 1em;
+	--the-gap: 0;
+	--the-list-padding: 0;
+	--the-icon-offset: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: var(--the-gap);
+	align-items: center;
+	font-size: var(--the-fz);
+
+	&.swell-block-linkList {
+		--swl-list-padding--left: 0;
+		list-style: none;
+	}
+
+	.swell-block-linkList__item {
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	&.is-style-default {
+		--the-color: var(--color_main);
+		--the-gap: .75em;
+
+		.swell-block-linkList__icon,
+		.swell-block-linkList__text {
+			transition: transform .25s;
+		}
+
+		.swell-block-linkList__link {
+
+			&:hover {
+				color: var(--the-color);
+			}
+		}
+
+		.swell-block-linkList__text {
+			margin-right: auto;
+		}
+
+		.swell-block-linkList__icon {
+			color: var(--the-color);
+		}
+	}
+
+	// .is-style-default にのみ付く
+	&.-border {
+		--the-list-padding: .6em .5em;
+		--the-gap: 0;
+
+		.swell-block-linkList__item {
+			border-bottom: solid 1px var(--color_border);
+		}
+
+		.swell-block-linkList__item:first-child {
+			border-top: solid 1px var(--color_border);
+		}
+	}
+
+	&.is-style-default:not(.-flex) {
+
+		.swell-block-linkList__link:hover {
+
+			.-left + .swell-block-linkList__text,
+			.-right {
+				transform: translateX(.4em);
+			}
+		}
+	}
+
+
+	&.is-style-button {
+		--the-gap: .5em;
+		--the-icon-offset: -.75em;
+		--the-list-padding: .6em 1.5em;
+
+		&.-flex {
+			--the-icon-offset: -.15em;
+			--the-list-padding: .25em .6em;
+		}
+
+		// &:not(.-flex) {
+		//     --the-icon-offset: .25em;
+		//     --the-list-padding: .6em 1.5em;
+
+		//     .swell-block-linkList__icon {
+		//         position: absolute;
+		//     }
+		// }
+
+		.swell-block-linkList__text {
+			margin: 0 auto;
+		}
+
+		.swell-block-linkList__link {
+			justify-content: center;
+			color: var(--the-color);
+			text-align: center;
+			background-color: transparent;
+			border: 1px solid var(--the-color);
+			border-radius: var(--the-radius);
+			transition: background-color .25s, color .25s;
+
+			// gap: 1em;
+
+			&:hover {
+				color: #fff;
+				background-color: var(--the-color);
+			}
+		}
+	}
+
+	// button スタイルにのみ付く
+	&.-fill {
+
+		.swell-block-linkList__link {
+			color: #fff;
+			background-color: var(--the-color);
+
+			&:hover {
+				color: var(--the-color);
+				background-color: transparent;
+			}
+		}
+	}
+
+	&.-flex {
+		--the-gap: .5em;
+
+		.swell-block-linkList__item {
+			width: auto;
+			margin: 0 !important;
+		}
+	}
+
+	&.is-style-default.-flex {
+		--the-list-padding: 0px;
+		--the-gap: .5em .75em;
+
+		.swell-block-linkList__link:hover {
+			text-decoration: underline;
+		}
+	}
+
+}

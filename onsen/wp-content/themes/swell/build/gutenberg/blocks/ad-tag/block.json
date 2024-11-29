@@ -1,0 +1,25 @@
+{
+  "apiVersion": 2,
+  "name": "loos/ad-tag",
+  "title": "広告タグ",
+  "category": "swell-blocks",
+  "supports": {
+    "className": false
+  },
+  "keywords": [
+    "swell",
+    "ad",
+    "tag"
+  ],
+  "attributes": {
+    "className": {
+      "type": "string",
+      "default": ""
+    },
+    "adID": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "textdomain": "swell"
+}

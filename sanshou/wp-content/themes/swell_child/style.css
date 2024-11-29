@@ -1,0 +1,482 @@
+@charset "UTF-8";
+/*
+    Template: swell
+    Theme Name: SWELL CHILD
+    Theme URI: https://swell-theme.com/
+    Description: SWELLの子テーマ
+    Version: 1.0.0
+    Author: LOOS WEB STUDIO
+    Author URI: https://loos-web-studio.com/
+
+    License: GNU General Public License
+    License URI: http://www.gnu.org/licenses/gpl.html
+*/
+/*=================
+    トップページ
+=================*/
+/*-グローバルナビゲーション-*/
+.c-gnav{
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-273 a{
+	display: block;
+	position: relative;
+	top: 20%;
+	height: 70%;
+	margin: 0 20px;
+	padding: 0 20px;
+	border:2px solid #eee;
+	border-radius: 50px;
+	color: #008fc3;
+}
+
+.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-273 a:hover{
+    animation-name: btn-btw;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes btn-btw{
+    from{
+        color: #008fc3;
+        background-color: #fff;
+    }to{
+        color: #fff;
+        background-color: #008fc3;
+    }
+}
+
+.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-273 a span.ttl{
+	padding: 20px 0;
+}
+
+#fix_header .menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-273 a span.ttl{
+	padding: 17px 0;
+}
+
+.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-273 a::after,.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-274 a::after{
+	display: none;
+}
+
+.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-274 a{
+	display: block;
+	position: relative;
+	top: 20%;
+	height: 70%;
+	padding: 0 20px;
+	border-radius: 50px;
+	background-color: #008fc3;
+	color: #fff;
+}
+
+.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-274 a:hover{
+    animation-name: btn-btw2;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes btn-btw2{
+    from{
+        color: #fff;
+        background-color: #008fc3;
+    }to{
+        color: #008fc3;
+        background-color: #fff;
+        border:2px solid #eee;
+    }
+}
+
+.menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-274 a span.ttl{
+	padding: 20px 0;
+}
+
+#fix_header .menu-item.menu-item-type-custom.menu-item-object-custom.menu-item-274 a span.ttl{
+	padding: 17px 0;
+}
+
+/*-メインビジュアル-*/
+#main_visual{
+    border-radius: 150px 150px 0 0;
+}
+
+.swiper-pagination.swiper-pagination-clickable.swiper-pagination-bullets.swiper-pagination-horizontal{
+   position: absolute;
+   width: 1%;
+   height: auto;
+   right: 25px;
+   left: auto;
+   top: 50%;
+}
+
+.p-mainVisual__scroll.c-plainBtn{
+   position: absolute;
+   right: 25px;
+   left: auto;
+}
+.p-mainVisual .swiper-pagination-bullet-active {
+   background-color: #008fc3;
+}
+
+/*-----コンテンツ-----*/
+.top #content{
+  padding-top: 0 !important;
+  margin-bottom: 0;
+}
+
+.r_rad{
+	border-radius: 0 0 300px 0;
+}
+
+.l_rad{
+	border-bottom-left-radius: 300px;
+}
+
+.l_top_rad{
+	border-radius: 300px 0 0 0;
+}
+
+/*-左固定-*/
+
+/*左と右を囲う全体のエリア*/
+#lr_sc{
+position: relative;/*position stickyの基点にするため relativeをかける*/
+    display: flex;/*左エリア、右エリア横並び指定*/
+flex-wrap: wrap;/*ボックスの折り返し可*/
+}
+
+/*左エリア*/
+#lr_sc_fixed-area{
+/*左固定記述*/
+    position: -webkit-sticky;/*Safari用*/
+    position: sticky;
+    top:0;
+    left: 0;
+    /*横半分50%　縦を100vhにする*/
+    width: 45%;
+    height: 100vh;
+}
+
+
+/*右エリア*/
+#lr_sc_container{
+    /*横半分50%にする*/
+    width:50%;
+    margin-left: 10px;
+}
+#lr_sc h3::before{
+	display: none;
+}
+
+#lr_sc_fixed-area{
+	padding-top: 200px;
+	color: #fff;
+}
+
+#lr_sc_fixed-area p{
+	margin-bottom: 30px;
+}
+
+.lr_sc_box{
+	border: 2px solid #eee;
+	border-radius: 30px;
+	background-color: #fff;
+	margin-bottom: 25px;
+}
+
+.lr_sc_box .lr_sc_m{
+	width: 80%;
+	margin: 0 auto;
+	padding: 30px 0;
+}
+
+.lr_sc_box img{
+	width: 100%;
+	height: 250px;
+	object-fit: cover;
+}
+
+.lr_sc_box .lr-f{
+	display: flex;
+	padding-bottom: 20px;
+}
+
+.lr_sc_box h3{
+	font-size: 50px;
+	font-weight: 100;
+	color: #008fc3;
+	margin: 0 0 10px 0;
+	padding: 0 10px 0 10px;
+	border-right: 2px solid #eee;
+}
+
+.lr_sc_box p{
+	display: inline-block;
+	margin: 0 10px;
+}
+
+/*＝＝＝＝＝＝＝＝＝＝＝768px以下の見え方＝＝＝＝＝＝＝＝＝＝＝＝＝*/
+
+@media screen and (max-width:768px){
+    #lr_sc_wrapper{
+      display: block;/*display:flex;を解除*/
+    }
+    section{
+      min-height:auto;/*縦を100vh⇒解除*/
+    }
+    
+    #lr_sc_fixed-area{
+        position:relative!important;/*position stickyを解除*/
+      width:100%;/*横幅を100%にして1列に見せる*/
+      height: 40vh;/*縦幅を100vh⇒40vh　※任意の高さに設定可能*/
+      padding-top: 0;
+    }
+    
+    #lr_sc_container{
+      width:100%;/*横幅を100%にして1列に見せる*/
+    }
+}
+
+/*-----背景青-----*/
+.z-in_up{
+	position: relative;
+	z-index: 4;
+}
+
+#und-b{
+	position: absolute;
+	background-color: #008fc3;
+	top: -500px;
+	left: -500px;
+	width: 10000px;
+	height: 500px;
+	z-index: 3;
+}
+
+/*ボタン白*/
+.c-w a{
+	background-color: #fff;
+}
+
+
+
+/*-スライダー-*/
+/*待避用
+<ul class="slider">
+    <li><img src="http://sansyou.local/wp-content/uploads/2024/01/human1.png" alt=""></li>
+    <li><img src="http://sansyou.local/wp-content/uploads/2024/01/human2.png" alt=""></li>
+    <li><img src="http://sansyou.local/wp-content/uploads/2024/01/human3.png" alt=""></li>
+    <li><img src="http://sansyou.local/wp-content/uploads/2024/01/human4.png" alt=""></li>
+    <li><img src="http://sansyou.local/wp-content/uploads/2024/01/human5.png" alt=""></li>
+</ul>
+<ul class="a-n-f">
+    <li><h5>1名前名前名前</h5><p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p></li>
+    <li><h5>2名前名前名前</h5><p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p></li>
+    <li><h5>3名前名前名前</h5><p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p></li>
+    <li><h5>4名前名前名前</h5><p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p></li>
+    <li><h5>5名前名前名前</h5><p>テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト</p></li>
+</ul>
+*/
+.slider{
+    width: 94%;
+    margin: 0 auto;
+}
+
+.slider img{
+    width: 20vw;
+    height: auto;
+}
+
+.slider .slick-slide{
+    transform: translateY(25px) scale(0.8);
+    transition: all .5s;
+    opacity: 0.4;
+    vertical-align: bottom;
+}
+
+.slider .slick-slide.slick-current{
+    transform: scale(1) ;
+    opacity: 1;
+}
+
+.slick-prev,
+.slick-next{
+    position: absolute;
+    top: 42%;
+    cursor: pointer;
+    outline: none;
+    border-top: 2px solid #666;
+    border-right: 2px solid #666;
+    height: 15px;
+    width: 15px;
+}
+
+.slick-prev{
+    left: -1.5%;
+    transform: rotate(-135deg);
+}
+
+.slick-next{
+    right: -1.5%;
+    transform: rotate(45deg);
+}
+
+.a-n-f{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.a-n-f h5{
+    font-size: 30px;
+}
+
+/*===========================
+        会社概要
+============================*/
+.s-none .is-style-emboss_box{
+	box-shadow: none;
+}
+
+/*==============================
+        お問い合わせフォーム
+===============================*/
+.fl{
+	display: flex;
+	align-items: flex-start;
+	justify-content: flex-start;
+	margin: 0 0 1.75em;
+}
+
+.cf7-q{
+	width: 100%;
+	margin: 0 0 0 10px;
+}
+
+.cf7-a{
+}
+
+/* 各項目共通 */
+#cf7-area label{
+font-weight:bold;
+}
+
+.cf7-area input[type="text"],.cf7-area input[type="email"],.cf7-area input[type="tel"],.cf7-area textarea{
+background: #FFF;
+width:95%;
+margin-left:10px;
+	border-radius: 20px;
+}
+
+.cf7-area input[type="text"]:focus,.cf7-area input[type="email"]:focus,.cf7-area input[type="tel"]:focus,.cf7-area textarea:focus {
+background:#eeffff;
+border: 2px solid #0088ff;
+outline: 0;
+}
+
+.cf7-area input[type="checkbox"], .cf7-area input[type="radio"]{
+appearance: auto;
+}
+
+.cf7-area .wpcf7-list-item {
+display: block;
+}
+
+.cf7-area textarea{
+height:200px;
+padding: 0.625em 0.4375em;
+}
+
+
+
+.cf7-submit {
+width: 40%;
+margin: 0 auto;
+text-align: center;
+}
+
+.cf7-area input[type="submit"]
+{
+	transition: all 0.5s ease;
+width: 100%;
+background-color: #191970;
+color: #ffffff;
+border-radius: 25px;
+font-size: 1.2em;
+padding: 1em 10px;
+}
+
+.cf7-area input[type="submit"]:hover
+{
+background-color:#ffffff;
+border: 2px solid #191970;
+color:#191970;
+}
+
+.cf7-btn{
+width: 40%;
+margin: 0 auto;
+text-align: center;
+}
+/*　必須ラベル　*/
+.cf7-req{
+font-size:.8em;
+padding: 4px 6px;
+background: #eb2a2a;
+color: #ffffff;
+margin-left: 10px;
+display:inline-block;
+}
+
+@media screen and (max-width:768px){
+.cf7-item {
+display: block;
+}
+
+.cf7-area label{
+display: block;
+margin-bottom: 10px;
+}
+
+.cf7-q {
+width: 100%;
+margin: 0;
+}
+
+.cf7-a {
+width: 100%;
+}
+
+.cf7-area input[type="text"], .cf7-area input[type="email"], .cf7-area input[type="tel"], .cf7-area textarea{
+margin-left: 0;
+}
+
+.cf7-submit{
+width: 90%;
+}
+}
+.cf7-a textarea{
+	width: 100%;
+	height: auto;
+}
+
+@media screen and (max-width: 600px){
+	.fl{
+		display: block;
+		margin-bottom: 20px;
+	}
+	
+	.cf7-item{
+		margin-bottom: 20px;
+	}
+
+	
+	.cf7-q {
+width: 100%;
+margin: 0 0 0 10px;
+}
+
+.cf7-a {
+width: 100%;
+}
+}

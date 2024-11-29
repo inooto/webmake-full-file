@@ -1,0 +1,27 @@
+{
+	"name": "vk-swiper",
+	"version": "1.0.0",
+	"description": "Swiper を読み込むためのスクリプトです。",
+	"main": "gulpfile.js",
+	"scripts": {
+		"update": "ncu -u && rm -rf node_moduke packagi-lock.json && npm install && gulp copy_swiper"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://kurudrive@github.com/vektor-inc/vektor-wp-libraries.git"
+	},
+	"author": "",
+	"license": "GPL-2.0",
+	"bugs": {
+		"url": "https://github.com/vektor-inc/vektor-wp-libraries/issues"
+	},
+	"homepage": "https://github.com/vektor-inc/vektor-wp-libraries#readme",
+	"devDependencies": {
+		"gulp": "^4.0.2",
+		"npm-check-updates": "^16.14.6",
+		"swiper": "^11.0.2"
+	},
+	"volta": {
+		"node": "18.13.0"
+	}
+}
